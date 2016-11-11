@@ -253,7 +253,7 @@ class TryRedis < Sinatra::Base
     logger = if test?
                nil
              else
-               Logger.new(File.join(File.dirname(__FILE__),'log','redis.log'))
+               Logger.new(STDOUT)
              end
 
     if logger
