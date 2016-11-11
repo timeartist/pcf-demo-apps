@@ -1,0 +1,37 @@
+%html
+
+  %head
+
+    %title Try Redis
+    %link{"rel" => "shortcut icon", "href" => "/images/favicon.png"}
+    %link{"rel" => "stylesheet", "href" => "/style.css"}
+
+  %body
+
+    #header
+      %img{"src" => "/images/try-redis-500x50.png", "width" => 500, "height" => 50}
+
+    #log
+      .line.notification= tutorial 0
+
+    #toolbar
+      %input{:id => "input", :spellcheck => "false"}
+
+
+    #footer
+      :markdown
+        This site was originally written by Alex McHale
+        ([github](https://github.com/alexmchale)
+         [twitter](https://twitter.com/alexmchale))
+        and inspired by [Try Mongo](http://try.mongodb.org).
+        It's now maintained and hosted by Jan-Erik Rediger
+        ([github](https://github.com/badboy)
+          [twitter](https://twitter.com/badboy_))
+
+        The source code to Try Redis is available on
+        [GitHub](http://github.com/badboy/try.redis).
+
+    %script{"type" => "application/x-javascript", "src" => "/javascripts/jquery.min.js"}
+    %script{"type" => "application/x-javascript", "src" => "/javascripts/underscore-min.js"}
+    %script{"type" => "application/x-javascript", "src" => "/javascripts/json2.js"}
+    %script{"type" => "application/x-javascript", "src" => "/javascripts/terminal.js"}

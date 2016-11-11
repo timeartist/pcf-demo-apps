@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    (function poll() {
+      $.ajax({
+          url: "/data",
+          type: "GET",
+          success: function(data) {
+              console.log("polling");
+              console.log(data);
+
+              var $redisArrayHTML = $("<div></div>");
+              for(var item in data) {
+                console.log(data[item]);
+                $redisArrayHTML.append($("<div>" +data[item] + "</div><br>"));
+              }
+
+              $("div").replaceWith($redisArrayHTML);
+
+          },
+          dataType: "json",
+          complete: setTimeout(function() {poll()}, 500),
+          timeout: 500
+          })
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="content"></div>
+  </body>
+</html>
