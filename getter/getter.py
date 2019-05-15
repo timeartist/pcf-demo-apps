@@ -17,7 +17,7 @@ def data():
 
 def make_redis():
     try:
-        service_env_vars = loads(getenv('VCAP_SERVICES'))['redislabs-enterprise-cluster'][0]
+        service_env_vars = loads(getenv('VCAP_SERVICES'))['redislabs'][0]
         credentials = service_env_vars['credentials']
         host = credentials['ip_list'][0]
         port = credentials['port']
